@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitGirl Downloader</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>FitGirl <span class="highlight">Downloader</span></h1>
+            <p>Premium High-Speed Download Manager</p>
+        </header>
+
+        <main class="main-grid">
+            <!-- Left Column: Controls & Status -->
+            <div class="left-col">
+                <div class="card input-section">
+                    <div class="form-group">
+                        <label for="folder-input">Download Location</label>
+                        <div class="folder-select">
+                            <input type="text" id="folder-input" value="/tmp" readonly>
+                            <button id="browse-btn" class="btn secondary">Browse</button>
+                        </div>
+                    </div>
+
+                    <button id="download-btn" class="btn primary">Start Download</button>
+                </div>
+
+                <div class="card status-section hidden" id="status-card">
+                    <div class="status-header">
+                        <h2 id="status-text">Ready</h2>
+                        <span id="percentage">0%</span>
+                    </div>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" id="progress-bar"></div>
+                    </div>
+                    <div class="file-info">
+                        <span id="current-file">Waiting...</span>
+                    </div>
+                </div>
+
+                <div class="card logs-section">
+                    <h3>Logs</h3>
+                    <div class="logs-container" id="logs-container">
+                        <div class="log-entry info">System ready...</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Links Input -->
+            <div class="right-col">
+                <div class="card links-section">
+                    <label for="url-input">Download Links (One per line)</label>
+                    <textarea id="url-input" placeholder="Paste your FuckingFast links here..."
+                        spellcheck="false"></textarea>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Browse Modal -->
+    <div id="browse-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Select Folder</h3>
+                <button class="close-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="current-path" id="modal-path">/</div>
+                <ul class="file-list" id="file-list">
+                    <!-- Items injected here -->
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button class="btn secondary" id="new-folder-btn">New Folder</button>
+                <button class="btn secondary close-btn">Cancel</button>
+                <button class="btn primary" id="select-folder-btn">Select This Folder</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>
