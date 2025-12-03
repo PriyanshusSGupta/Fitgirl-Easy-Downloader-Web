@@ -66,5 +66,3 @@ To extract and copy all direct download links, follow these steps:
 
 # Disclaimer
 This tool is created for educational purposes and ethical use only. Any misuse of this tool for malicious purposes is not condoned. The developers of this tool are not responsible for any illegal or unethical activities carried out using this tool.
-
-[![Star History Chart](https://api.star-history.com/svg?repos=JOY6IX9INE/Fucking-Fast-Multi-Downloader&type=Date)](https://star-history.t9t.io/#JOY6IX9INE/Fucking-Fast-Multi-Downloader&Date)
